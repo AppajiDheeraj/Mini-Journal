@@ -1,0 +1,260 @@
+:root {
+    --background: #f5f5f5;
+    --text: #333;
+    --highlight: #2563eb;
+    --button-primary: #2563eb;
+    --button-text: #fff;
+    --button-secondary: #e5e7eb;
+    --button-secondary-text: #1f2937;
+    --card-bg: #fff;
+    --border: #e5e7eb;
+    --calendar-highlight: #ff6b6b;
+    --emoji-border: transparent;
+  }
+  
+  [data-theme="dark"] {
+    --background: #111827;
+    --text: #f3f4f6;
+    --highlight: #3b82f6;
+    --button-primary: #4f46e5;
+    --button-text: #fff;
+    --button-secondary: #374151;
+    --button-secondary-text: #f3f4f6;
+    --card-bg: #1f2937;
+    --border: #374151;
+    --calendar-highlight: #ff6b6b;
+    --emoji-border: #374151;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    width: 350px;
+    height: 450px;
+    overflow: hidden;
+  }
+  
+  .container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  h1 {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .header-icons {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    border-radius: 4px;
+  }
+  
+  .icon-button:hover {
+    background-color: var(--button-secondary);
+  }
+  
+  .view {
+    display: none;
+    flex-direction: column;
+    height: calc(100% - 50px);
+  }
+  
+  .active {
+    display: flex;
+  }
+  
+  .textarea-container {
+    flex: 1;
+    margin-bottom: 12px;
+  }
+  
+  textarea {
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    resize: none;
+    background-color: var(--card-bg);
+    color: var(--text);
+    font-size: 16px;
+    outline: none;
+  }
+  
+  .mood-emojis {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .emoji-btn {
+    background: none;
+    border: 1px solid var(--emoji-border);
+    font-size: 20px;
+    margin-right: 8px;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+  }
+  
+  .emoji-btn:hover {
+    transform: scale(1.1);
+  }
+  
+  .emoji-btn.selected {
+    border: 2px solid var(--highlight);
+  }
+  
+  #wordCount {
+    margin-left: auto;
+    font-size: 12px;
+    color: var(--text);
+    opacity: 0.7;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  button {
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    font-size: 14px;
+  }
+  
+  .primary-button {
+    background-color: var(--button-primary);
+    color: var(--button-text);
+  }
+  
+  #exportAll {
+    background-color: var(--button-secondary);
+    color: var(--button-secondary-text);
+  }
+  
+  /* Calendar View */
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .nav-button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: var(--text);
+    padding: 4px 8px;
+  }
+  
+  .calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+  
+  .day-header {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text);
+    opacity: 0.7;
+  }
+  
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    flex: 1;
+  }
+  
+  .calendar-day {
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+  }
+  
+  .calendar-day.empty {
+    background: none;
+    border: none;
+  }
+  
+  .calendar-day.today {
+    border: 2px solid var(--highlight);
+    font-weight: bold;
+  }
+  
+  .calendar-day.has-entry {
+    background-color: var(--button-secondary);
+  }
+  
+  .calendar-day:hover:not(.empty) {
+    background-color: var(--button-secondary);
+  }
+  
+  /* Color indicators for moods */
+  .calendar-day[data-mood="happy"] {
+    border-bottom: 3px solid #4ADE80;
+  }
+  
+  .calendar-day[data-mood="love"] {
+    border-bottom: 3px solid #FB7185;
+  }
+  
+  .calendar-day[data-mood="laugh"] {
+    border-bottom: 3px solid #FBBF24;
+  }
+  
+  .calendar-day[data-mood="thinking"] {
+    border-bottom: 3px solid #60A5FA;
+  }
+  
+  .calendar-day[data-mood="angry"] {
+    border-bottom: 3px solid #F43F5E;
+  }

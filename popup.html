@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Journal</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Mini Journal</h1>
+      <div class="header-icons">
+        <button id="calendarButton" class="icon-button" title="Calendar View">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+        </button>
+        <button id="themeToggle" class="icon-button" title="Toggle Theme">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <div id="editorView" class="view active">
+      <div class="textarea-container">
+        <textarea id="journalEntry" placeholder="Write your thoughts..."></textarea>
+      </div>
+      
+      <div class="mood-emojis">
+        <button class="emoji-btn" data-mood="happy">😊</button>
+        <button class="emoji-btn" data-mood="love">❤️</button>
+        <button class="emoji-btn" data-mood="laugh">😂</button>
+        <button class="emoji-btn" data-mood="thinking">🤔</button>
+        <button class="emoji-btn" data-mood="angry">😡</button>
+        <span id="wordCount">0 words</span>
+      </div>
+      
+      <div class="button-container">
+        <button id="saveEntry" class="primary-button">Save Entry</button>
+        <button id="exportAll">Export All</button>
+      </div>
+    </div>
+
+    <div id="calendarView" class="view">
+      <div class="calendar-header">
+        <button id="prevMonth" class="nav-button">&lt;</button>
+        <h2 id="currentMonth">April 2025</h2>
+        <button id="nextMonth" class="nav-button">&gt;</button>
+      </div>
+      
+      <div class="calendar-days">
+        <div class="day-header">Sun</div>
+        <div class="day-header">Mon</div>
+        <div class="day-header">Tue</div>
+        <div class="day-header">Wed</div>
+        <div class="day-header">Thu</div>
+        <div class="day-header">Fri</div>
+        <div class="day-header">Sat</div>
+      </div>
+      
+      <div id="calendarDays" class="calendar-grid"></div>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
