@@ -78,13 +78,13 @@
 
 ## 📁 Folder Structure
 
-habit-tracker-extension/ 
-├── popup.html # Popup interface 
-├── script.js # Functionality logic 
-├── styles.css # Styling for dark/light modes 
-├── manifest.json # Chrome extension config 
-├── icon.png # Extension icon 
-└── /screenshots # UI screenshots for README
+habit-tracker-extension/ <br>
+├── popup.html # Popup interface <br>
+├── script.js # Functionality logic <br>
+├── styles.css # Styling for dark/light modes <br>
+├── manifest.json # Chrome extension config <br>
+├── icon.png # Extension icon <br>
+└── /screenshots # UI screenshots for README 
 
 ---
 
