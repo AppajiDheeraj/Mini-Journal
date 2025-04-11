@@ -15,7 +15,6 @@
 
 ### 🧠 Entry Editor
 - Simple, clean text box to jot down your thoughts.
-- Supports basic markdown: `**bold**`, `_italic_`, and `- lists`.
 - Auto-saves entries on close.
 - Word count tracker to help with mindful journaling.
 - Five emoji mood choices 😄🥰😐😟😡.
