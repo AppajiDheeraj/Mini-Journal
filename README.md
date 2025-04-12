@@ -4,6 +4,8 @@
 
 > ✨ No sign-ups. No cloud. Just you and your thoughts.
 
+![Demo](mini-journal-ezgif.com-optimize.gif)
+
 ---
 
 ## 🚀 Features
@@ -52,10 +54,7 @@
 ## 📸 UI Preview
 
 ### 📆 Calendar View
-![Calendar UI](screenshots/calendar.png)
-
 ### ✍️ Entry + Mood Board
-![Editor UI](screenshots/editor.png)
 
 ---
 
@@ -84,7 +83,6 @@ habit-tracker-extension/ <br>
 ├── styles.css # Styling for dark/light modes <br>
 ├── manifest.json # Chrome extension config <br>
 ├── icon.png # Extension icon <br>
-└── /screenshots # UI screenshots for README 
 
 ---
 
